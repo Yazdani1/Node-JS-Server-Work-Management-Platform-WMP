@@ -22,7 +22,6 @@ exports.createExpense = async (req, res) => {
     res.status(400).json({ error: "Something went wrong" });
   }
 };
-
 // to get all the expense
 exports.getAllExpense = async (req, res) => {
   try {
@@ -51,7 +50,6 @@ exports.deleteExpense = async (req, res) => {
   }
 };
 // to count expense with aggregation of mongodb
-
 exports.countAllExpenses = async (req, res) => {
   try {
     const allExpense = await Expense.aggregate([
