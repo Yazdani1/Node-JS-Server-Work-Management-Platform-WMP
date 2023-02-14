@@ -90,3 +90,19 @@ exports.deleteHomeRentalAdvertise = async (req, res) => {
     res.status(500).json({ error: "Something went wrong" });
   }
 };
+
+/**
+ * Get single home rental details
+ */
+
+exports.getSingleHomeRentalDetails = async (req, res) => {
+  try {
+    const singleHomerentalQuery = { _id: req.params.id };
+
+    const singleHomeRental = await HomeRental.findOne(singleHomerentalQuery);
+
+    res.status(200).json(singleHomeRental);
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong" });
+  }
+};
