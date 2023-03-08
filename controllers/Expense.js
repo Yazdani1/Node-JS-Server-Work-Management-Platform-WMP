@@ -23,6 +23,11 @@ exports.createExpense = async (req, res) => {
   }
 };
 // to get all the expense
+/**
+ * Get all the expense list
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getAllExpense = async (req, res) => {
   try {
     const allExpense = await Expense.find().sort({ date: -1 });
