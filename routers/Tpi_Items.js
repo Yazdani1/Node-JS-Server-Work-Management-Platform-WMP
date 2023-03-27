@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {createTpiItem,getAllItemList} = require("../controllers/Tpi_Items");
+const {createTpiItem,getAllItemList,deleteAllTPIItems,deleteSingleItem} = require("../controllers/Tpi_Items");
 
 
 /**
@@ -15,5 +15,17 @@ router.post("/create-tpi-item",createTpiItem);
 
 router.get("/all-tpi-item-list",getAllItemList);
 
+
+/**
+ * To delete all the tpi item post
+ */
+
+router.delete("/delete-all-apiitems",deleteAllTPIItems);
+
+/**
+ * To delete single tpi array item
+ */
+
+router.delete("/delete-single-item/:id",deleteSingleItem);
 
 module.exports = router;
