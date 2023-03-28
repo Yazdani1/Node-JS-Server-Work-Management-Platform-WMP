@@ -27,6 +27,7 @@ app.use("/api", require("./routers/PhotoLibrary"));
 app.use("/api", require("./routers/OnlineStore"));
 app.use("/api", require("./routers/HomeRental"));
 app.use("/api", require("./routers/Tpi_Items"));
+app.use("/api", require("./routers/NewsPortal"));
 
 
 app.listen(port, (req, res) => {
