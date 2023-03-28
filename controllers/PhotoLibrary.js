@@ -18,6 +18,12 @@ exports.ceratePhotoLibrary = async (req, res) => {
 
 // to get all the photo for library
 
+/**
+ * To get all the list of photo libary
+ * @param {*} req 
+ * @param {*} res 
+ */
+
 exports.getAllPhoto = async (req, res) => {
   try {
     const allPhotos = await PhotoLibrary.find().sort({ date: -1 });

@@ -5,20 +5,13 @@ const {createExpense,getAllExpense,deleteExpense,countAllExpenses} = require("..
 
 router.post("/create-expense",createExpense);
 
-
 // to get all the expense
-
 router.get("/get-Allexpense",getAllExpense);
 
-
 // to coun expense
-
 router.get("/count-expenses",countAllExpenses);
 
-
 // to delete expense
-
 router.delete("/delete-expense/:id",deleteExpense);
-
 
 module.exports = router;

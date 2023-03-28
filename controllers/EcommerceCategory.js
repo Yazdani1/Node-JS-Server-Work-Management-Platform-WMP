@@ -2,7 +2,6 @@ const slugify = require("slugify");
 const EcommerceCategory = require("../model/EcommerceCategory");
 
 // to create ecommercecategory
-
 exports.createECategory = async (req, res) => {
   try {
     const { ecategoryname } = req.body;
@@ -30,8 +29,6 @@ exports.createECategory = async (req, res) => {
 };
 
 // to get all ecommercecategory
-
-
 exports.getAllECommerceCategory = async (req, res) => {
   try {
     const allECommerceCategory = await EcommerceCategory.find().sort({

@@ -22,8 +22,12 @@ exports.createExpense = async (req, res) => {
     res.status(400).json({ error: "Something went wrong" });
   }
 };
-
 // to get all the expense
+/**
+ * Get all the expense list
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getAllExpense = async (req, res) => {
   try {
     const allExpense = await Expense.find().sort({ date: -1 });
@@ -51,7 +55,6 @@ exports.deleteExpense = async (req, res) => {
   }
 };
 // to count expense with aggregation of mongodb
-
 exports.countAllExpenses = async (req, res) => {
   try {
     const allExpense = await Expense.aggregate([
