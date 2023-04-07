@@ -97,7 +97,11 @@ exports.getAllFeaturedProducts = async (req, res) => {
 
 // to search product by using query.
 // query is used to search product from database.
-
+/**
+ * To add search query and find out the product based on the search query
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getFilteredProducts = async (req, res) => {
   const { min, max } = req.query;
   try {
