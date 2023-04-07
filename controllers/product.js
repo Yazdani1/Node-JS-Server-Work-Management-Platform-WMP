@@ -187,8 +187,12 @@ exports.getProductPriceCount = async (req, res) => {
   }
 };
 
-// to delete products
-
+/**
+ * To delete a single product
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 exports.deleteProduct = async (req, res) => {
   try {
     const delete_product_Id = { _id: req.params.id };
