@@ -1,8 +1,13 @@
 const slugify = require("slugify");
 const Product = require("../model/Product");
 
-// to create a new product
 
+/**
+ * To create new project
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 exports.createProduct = async (req, res) => {
   try {
     const { title, price, city, doors, brands, color, deliverytype, featured } =
@@ -58,20 +63,26 @@ exports.createProduct = async (req, res) => {
   }
 };
 
-// to get all the products
-
+/**
+ * To get all the products list
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getAllProducts = async (req, res) => {
   try {
     const allproducts = await Product.find().sort({ date: "DESC" });
 
     res.status(200).json(allproducts);
   } catch (error) {
-    res.status(400).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
   }
 };
 
-// to get featured products
-
+/**
+ * To get features products list
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getAllFeaturedProducts = async (req, res) => {
   try {
     const featuredproducts = await Product.find({ featured: true }).sort({
@@ -80,13 +91,17 @@ exports.getAllFeaturedProducts = async (req, res) => {
 
     res.status(200).json(featuredproducts);
   } catch (error) {
-    res.status(400).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
   }
 };
 
 // to search product by using query.
 // query is used to search product from database.
-
+/**
+ * To add search query and find out the product based on the search query
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getFilteredProducts = async (req, res) => {
   const { min, max } = req.query;
   try {
@@ -176,8 +191,12 @@ exports.getProductPriceCount = async (req, res) => {
   }
 };
 
-// to delete products
-
+/**
+ * To delete a single product
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 exports.deleteProduct = async (req, res) => {
   try {
     const delete_product_Id = { _id: req.params.id };
