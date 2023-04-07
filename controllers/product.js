@@ -78,8 +78,11 @@ exports.getAllProducts = async (req, res) => {
   }
 };
 
-// to get featured products
-
+/**
+ * To get features products list
+ * @param {*} req 
+ * @param {*} res 
+ */
 exports.getAllFeaturedProducts = async (req, res) => {
   try {
     const featuredproducts = await Product.find({ featured: true }).sort({
