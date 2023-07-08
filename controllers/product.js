@@ -8,6 +8,7 @@ const Product = require("../model/Product");
  * @param {*} res 
  * @returns 
  */
+
 exports.createProduct = async (req, res) => {
   try {
     const { title, price, city, doors, brands, color, deliverytype, featured } =
@@ -63,11 +64,13 @@ exports.createProduct = async (req, res) => {
   }
 };
 
+
 /**
  * To get all the products list
  * @param {*} req 
  * @param {*} res 
  */
+
 exports.getAllProducts = async (req, res) => {
   try {
     const allproducts = await Product.find().sort({ date: "DESC" });
@@ -78,11 +81,13 @@ exports.getAllProducts = async (req, res) => {
   }
 };
 
+
 /**
  * To get features products list
  * @param {*} req 
  * @param {*} res 
  */
+
 exports.getAllFeaturedProducts = async (req, res) => {
   try {
     const featuredproducts = await Product.find({ featured: true }).sort({
@@ -94,6 +99,7 @@ exports.getAllFeaturedProducts = async (req, res) => {
     res.status(500).json({ error: "Something went wrong" });
   }
 };
+
 
 // to search product by using query.
 // query is used to search product from database.
@@ -114,6 +120,7 @@ exports.getFilteredProducts = async (req, res) => {
     })
       .limit(req.query.limit)
       .sort({ date: "DESC" });
+      
     console.log(products);
     res.status(200).json(products);
   } catch (error) {
