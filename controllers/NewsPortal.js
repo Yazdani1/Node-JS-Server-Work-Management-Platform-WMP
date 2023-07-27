@@ -1,12 +1,14 @@
 const uuid = require("uuid");
 const NewsPortal = require("../model/NewsPortal");
 
+
 /**
  * To create news portal news
  * @param {*} req
  * @param {*} res
  * @returns
  */
+
 
 exports.createNewsForPortal = async (req, res) => {
   try {
